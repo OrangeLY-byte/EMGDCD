@@ -1,0 +1,24 @@
+data:
+  n_nodes: 20
+  train_batch_size: 128
+  test_batch_size: 128
+  input_step: 6
+  pred_step: 1
+sota:
+  ST_MSCD:
+    n_nodes: 20
+    data_dim: 1
+    total_epoch: 50
+    max_grad_norm: 5
+    decoder:
+      lr_dec: 0.01
+      mlp_hid: 64
+      gru_layers: 1
+      shared_weights_decoder: false
+      concat_h: t
+      weight_decay: 1e-05
+    encoder:
+      hid_dim: 64
+      lambda_1: 0.1
+      max_backward_tau: 0.2
+      lr_enc: 0.1
